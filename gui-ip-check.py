@@ -25,7 +25,8 @@ def get_ip_info():
         location_label.config(text=f"Location: {location}")
     except requests.RequestException as e:
         # Handle errors (e.g., no internet connection)
-        ip_label.config(text=f"Error: {str(e)}")
+        # ip_label.config(text=f"Error: {str(e)}")
+        ip_label.config(text=f"Error")
 
 # Create the main window
 root = tk.Tk()
@@ -54,7 +55,7 @@ region_label.grid(row=3, column=0, sticky="w", padx=80)
 country_label.grid(row=4, column=0, sticky="w", padx=80)
 isp_label.grid(row=5, column=0, sticky="w", padx=80)  # Add ISP label to the grid
 location_label.grid(row=6, column=0, sticky="w", padx=80)
-refresh_button.grid(row=7, column=0, sticky="n", pady=30)
+refresh_button.grid(row=7, column=0, sticky="n", padx=80,pady=30)
 
 # Initial request to display information
 get_ip_info()
